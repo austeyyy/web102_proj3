@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<a href="https://i.imgur.com/h9xltnP.gif" target="_blank" rel="noopener noreferrer">Video Walkthrough</a>
+<a href="https://i.imgur.com/b5jpdQV.gif" target="_blank" rel="noopener noreferrer">Video Walkthrough</a>
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
