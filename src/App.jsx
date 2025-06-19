@@ -66,6 +66,7 @@ const cardContent = [
 function App() {
   const [count, setCount] = useState(0)
   const [flipped, setFlipped] = useState(false);
+  const[guess, setGuess] = useState('')
 
   const handleNext = () => {
     setFlipped(false)
@@ -86,6 +87,20 @@ function App() {
     }
   }
 
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+    if (guess.toLowerCase() === cardContent[count].answer.toLowerCase()){
+      alert("Correct! ✅")
+
+    }else{
+      alert("Incorrect. ❌")
+    }
+
+    setGuess('')
+  }
+
+
   return (
     <div>
       <h1 style={{userSelect:'none'}}>🥸 Emoji Pictionary 🥸</h1>
@@ -93,6 +108,15 @@ function App() {
       <h4 style={{userSelect:'none'}}> Card {count + 1}/10 </h4>
 
       <Card question={cardContent[count].question} answer={cardContent[count].answer} difficulty= {cardContent[count].difficulty} flipped={flipped} setFlipped={setFlipped} />
+
+      <form onSubmit={handleSubmit} className='guess-container'>
+        <label>
+          Enter your guess:
+          <input className="input-field" type="text" value = {guess} onChange= {(e) => {setGuess(e.target.value)}}/>
+        </label>
+        <button className='btn' type='submit'>Check Guess</button>
+      </form>
+      
       <div className='btn-container'>
         <button className='btn' onClick={handlePrev} style={{userSelect:'none'}}>←</button>
         <button className='btn' onClick={handleNext} style={{userSelect:'none'}}>→</button>
