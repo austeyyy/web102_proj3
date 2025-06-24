@@ -99,6 +99,15 @@ button:focus-visible {
   transform: scale(1.05);
 }
 
+.btn:disabled {
+  background-color: rgb(162, 162, 162);
+
+}
+
+.btn:disabled:hover{
+  transform: scale(1);
+
+}
 button:focus,
 button:focus-visible {
   outline: none;
@@ -130,4 +139,5 @@ button:focus-visible {
 .input-field {
   background-color: white;
   color: black;
+  height: 30px;
 }

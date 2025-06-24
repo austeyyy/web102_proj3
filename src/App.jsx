@@ -27,7 +27,7 @@ const cardContent = [
   },
   {
     "question": "👽📞🏠",
-    "answer": "E.T. the Extra-Terrestrial",
+    "answer": "E.T.",
     "difficulty": "#e9cc5777"
   },
   {
@@ -70,9 +70,7 @@ function App() {
 
   const handleNext = () => {
     setFlipped(false)
-    if(count >= cardContent.length - 1){
-      setCount(0)
-    }else{
+    if(count < cardContent.length - 1){
       setCount(count + 1)
     }
 
@@ -80,9 +78,7 @@ function App() {
 
   const handlePrev = () => {
     setFlipped(false)
-    if(count <= 0){
-      setCount(count + cardContent.length - 1)
-    }else{
+    if(count > 0){
       setCount(count - 1)
     }
   }
@@ -118,8 +114,8 @@ function App() {
       </form>
       
       <div className='btn-container'>
-        <button className='btn' onClick={handlePrev} style={{userSelect:'none'}}>←</button>
-        <button className='btn' onClick={handleNext} style={{userSelect:'none'}}>→</button>
+        <button className='btn' onClick={handlePrev} disabled = {count <= 0} style={{userSelect:'none'}}>←</button>
+        <button className='btn' onClick={handleNext} disabled = {count >= cardContent.length - 1} style={{userSelect:'none'}}>→</button>
       </div>
       
       
